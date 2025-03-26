@@ -58,12 +58,13 @@ def age_bmi(age,bmi):
 
 
 def age_charges(age,charges):
+    #view the charge vs age patterns
     age = age
     charges = charges
     slope, intercept = np.polyfit(age, charges, 1)
-
+    #predict the line using the slope and regression
     charges_prediction = slope * age + intercept
-
+    #calculate the r squared value
     r_sqr = r2_score(charges, charges_prediction)
 
     plt.scatter(age, charges, color='blue')
